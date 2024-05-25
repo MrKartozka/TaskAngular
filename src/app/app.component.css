@@ -1,0 +1,508 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
+}
+
+
+/* ---------------------------- HEADER SECTION */
+
+.header {
+    background-color: #005BAA;
+}
+
+.container {
+    max-width: 1860px;
+    margin: 0 auto;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 17px 0;
+}
+
+.header__inner-logo {
+    display: flex;
+    align-items: center;
+}
+
+.header__inner-logo h2 {
+    margin-left: 23px;
+}
+
+.header__inner-title {
+    min-width: 300px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: white;
+    margin-right: 65px;
+}
+
+.header__inner-buttons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.header__inner-buttons-management {
+    display: flex;
+    border-radius: 5px;
+}
+
+.header__inner-buttons-management-btn {
+    font-size: 18px;
+    padding: 10px;
+    gap: 10px;
+    width: 120px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 1px white solid;
+    color: white;
+}
+
+.header__inner-buttons-management-btn:hover {
+    background-color: #F2F2F2;
+    color: black;
+}
+
+.header__inner-buttons-sort {
+    display: flex;
+}
+
+.header__inner-buttons-btn {
+    width: 40px;
+    gap: 10px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 1px white solid;
+    color: white;
+}
+
+.header__inner-buttons-btn:hover {
+    background-color: #F2F2F2;
+    color: black;
+}
+
+/*------------------ MAIN SECTION 1 */
+.main {
+    flex: 1;
+}
+
+.main__inner {
+    display: flex;
+    height: 100%;
+}
+
+.main_inner-choose-hardware {
+    margin-top: 15px;
+    overflow: auto;
+}
+
+.main__inner-stations {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main__inner-stations-choose {
+    display: flex;
+    align-items: center;
+}
+
+.main__inner-stations-choose-text {
+    font-size: 22px;
+    margin-left: 10px;
+}
+
+.main__inner-stations-substation-btn {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 1px solid #E0E0E0;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.main__inner-stations-save-btn {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 20px;
+    gap: 6px;
+    padding: 10px;
+    background-color: #005BAA;
+    border: 1px solid #E0E0E0;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.main__inner-list {
+    display: flex;
+    padding-top: 16px;
+}
+
+.main__inner-list-btn {
+    border: none;
+    background-color: transparent;
+    color: #005BAA;
+    min-width: 100px;
+    height: 40px;
+    border-radius: 5px 5px 0 0;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.main__inner-list-btn:hover {
+    border: 1px solid #DEE2E6;
+    background-color: #F2F2F2;
+    color: #495057;
+}
+
+.main__inner-line {
+    height: 2px;
+    width: 100%;
+    background-color: #E0E0E0;
+}
+
+.main__inner-buttons {
+    display: flex;
+    margin-top: 16px;
+}
+
+.main__inner-type {
+    display: flex;
+    margin-top: 16px;
+    justify-content: space-between;
+}
+
+.main__inner-table {
+    margin-top: 16px;
+}
+
+.main__inner-switch-buttons {
+    margin-top: 16px;
+    display: flex;
+}
+
+.main__inner-switch-buttons-btn {
+    border: 1px solid #E0E0E0;
+    background-color: transparent;
+    padding: 7px 16px;
+    font-size: 14px;
+}
+
+.main__inner-switch-buttons-btn:hover {
+    background-color: #CED4DA;
+}
+
+.list-btn {
+    border-radius: 5px 0 0 5px;
+}
+
+.statement-btn {
+    border-radius: 0 5px 5px 0;
+}
+
+.main__inner-type-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.main__inner-type-list,
+.main__inner-type-amount {
+    border-radius: 5px;
+    border: 1px solid #E0E0E0;
+    font-size: 14px;
+    padding: 5px;
+}
+
+.main__inner-type-list {
+    width: 223px;
+}
+
+.main__inner-type-amount {
+    width: 91px;
+}
+
+.main__inner-type-power {
+    margin-left: 10px;
+}
+
+.main_inner-type-switch-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.resizer {
+    width: 10px;
+    background-color: #ccc;
+    position: relative;
+    margin: 0 30px;
+    height: 89dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.resizer-img {
+    display: flex;
+    align-items: center;
+    cursor: col-resize;
+}
+
+/*------------------ MAIN SECTION 2 */
+
+.main__inner-measuring {
+    flex-grow: 1;
+    overflow: auto;
+    margin-top: 16px;
+}
+
+.main__inner-measuring-title {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.main__inner-measuring-tools {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.main__inner-measuring-tools-functions {
+    display: flex;
+    gap: 20px;
+}
+
+.main__inner-measuring-tools-btn {
+    padding: 8px;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid #005BAA;
+    color: #005BAA;
+    border-radius: 5px;
+}
+
+.main__inner-measuring-tools-view {
+    display: flex;
+    gap: 20px;
+}
+
+.main__inner-measuring-tools-view-change {
+    display: flex;
+}
+
+.main__inner-measuring-tools-view-change-btn {
+    background-color: transparent;
+    padding: 2px;
+    min-width: 45px;
+    border: 1px solid #CED4DA;
+}
+
+.main__inner-measuring-tools-view-change-btn:hover {
+    background-color: #CED4DA;
+}
+
+.vertical-btn {
+    border-radius: 5px 0 0 5px;
+}
+
+.horizontal-btn {
+    border-radius: 0 5px 5px 0;
+}
+
+.fullscreen-btn {
+    border-radius: 5px;
+}
+
+.main__inner-measuring-info-and-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.measuring-info-text--red {
+    color: #C5182D;
+}
+
+.main__inner-measuring-info-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ----------SECTION TABLE ONE----------- */
+
+.main__inner-table-equipment {
+    width: 100%;
+    font-size: 16px;
+}
+
+.main__inner-table-equipment tr {
+    text-align: left;
+
+}
+
+.main__inner-table-equipment,
+td,
+th {
+    border: 1px solid #E0E0E0;
+    border-collapse: collapse;
+}
+
+
+.main__inner-table-equipment td {
+    width: 50%;
+    padding: 8px;
+}
+
+.main__inner-table-equipment th {
+    background-color: #E0E0E0;
+    font-size: 18px;
+    padding: 8px;
+    font-weight: 400;
+}
+
+.main__inner-table-equipment tr:not(:first-child):hover td {
+    background-color: lightblue;
+}
+
+/* ------------SECTION TABLE TWO --------*/
+
+.main__inner-table-measurements {
+    width: 100%;
+    font-size: 16px;
+}
+
+.main__inner-table-measurements tr {
+    text-align: left;
+}
+
+.main__inner-table-measurements,
+td,
+th {
+    border: 1px solid #E0E0E0;
+    border-collapse: collapse;
+}
+
+.main__inner-table-measurements th {
+    border: 1px solid #b9b9b9;
+}
+
+.main__inner-table-measurements td {
+    min-width: 10%;
+    padding: 8px;
+}
+
+.main__inner-table-measurements th {
+    background-color: #E0E0E0;
+    font-size: 18px;
+    padding: 8px;
+    font-weight: 400;
+}
+
+.main__inner-table-measurements tr:not(:nth-child(2)):hover td {
+    background-color: lightblue;
+}
+
+.main__inner-table-button {
+    width: 20%;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #005BAA;
+}
+
+/* -------------------------- FOOTER SECTION */
+
+.footer {
+    background-color: #005BAA;
+    padding: 10px;
+}
+
+.footer p {
+    color: white;
+}
+
+/* --------------------------- Переключатель */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 16px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 10px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(16px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
