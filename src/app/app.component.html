@@ -140,10 +140,10 @@
             <button class="main__inner-measuring-tools-btn undo-btn">
               <img src="../assets/img/block.svg" alt="" class="tools-undo-img">Отменить проверку
             </button>
-            <button class="main__inner-measuring-tools-btn edit-btn">
+            <button class="main__inner-measuring-tools-btn edit-btn" (click)="openEditModal(selectedMeasurement)">
               <img src="../assets/img/edit.svg" alt="" class="tools-edit-img">Редактировать
             </button>
-            <button class="main__inner-measuring-tools-btn delete-btn">
+            <button class="main__inner-measuring-tools-btn delete-btn" (click)="deleteMeasurements()">
               <img src="../assets/img/delete.svg" alt="" class="tools-delete-img">Удалить
             </button>
           </div>
@@ -187,93 +187,23 @@
               <th>cos φ</th>
             </tr>
             <tr>
-              <td class="main__inner-table-addmeasurements" colspan="10"><button class="main__inner-table-button"><img
-                    src="../assets/img/add.svg" alt="">Добавить
-                  новые замеры</button></td>
+              <td class="main__inner-table-addmeasurements" colspan="10">
+                <button class="main__inner-table-button" (click)="openAddModal()">
+                  <img src="../assets/img/add.svg" alt="">Добавить новые замеры
+                </button>
+              </td>
             </tr>
-            <tr>
-              <td><input type="checkbox"></td>
-              <td>30.07.2022</td>
-              <td>10.15:23</td>
-              <td>Оператор</td>
-              <td>—</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><input type="checkbox"></td>
-              <td>30.07.2022</td>
-              <td>10.08:44</td>
-              <td>Оператор</td>
-              <td>—</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><input type="checkbox"></td>
-              <td>29.07.2022</td>
-              <td>15.08:44</td>
-              <td>Оператор</td>
-              <td>a</td>
-              <td>1</td>
-              <td>0.5</td>
-              <td>3</td>
-              <td>0.7</td>
-              <td>0.67</td>
-            </tr>
-            <tr>
-              <td><input type="checkbox"></td>
-              <td>12.06.2022</td>
-              <td>10:28:44</td>
-              <td>SCADA</td>
-              <td>b</td>
-              <td>1</td>
-              <td>0.6</td>
-              <td>2.756</td>
-              <td>0.9</td>
-              <td>0.83</td>
-            </tr>
-            <tr>
-              <td><input type="checkbox"></td>
-              <td>05.05.2022</td>
-              <td>13.56:39</td>
-              <td>АСКУЭ</td>
-              <td>c</td>
-              <td>1.2</td>
-              <td>0.5</td>
-              <td>3.143</td>
-              <td>0.78</td>
-              <td>0.67</td>
-            </tr>
-            <tr>
-              <td><input type="checkbox"></td>
-              <td>05.05.2022</td>
-              <td>13.56:39</td>
-              <td>АСКУЭ</td>
-              <td>c</td>
-              <td>1.2</td>
-              <td>0.5</td>
-              <td>3.143</td>
-              <td>0.78</td>
-              <td>0.67</td>
-            </tr>
-            <tr>
-              <td><input type="checkbox"></td>
-              <td>02.03.2022</td>
-              <td>17.43:51</td>
-              <td>Регистратор</td>
-              <td>ab</td>
-              <td>1.1</td>
-              <td>0.4</td>
-              <td>3.343</td>
-              <td>0.76</td>
-              <td>0.65</td>
+            <tr *ngFor="let measurement of measurements">
+              <td><input type="checkbox" (change)="toggleSelection(measurement.id)"></td>
+              <td>{{measurement.date}}</td>
+              <td>{{measurement.time}}</td>
+              <td>{{measurement.source}}</td>
+              <td>{{measurement.phase}}</td>
+              <td>{{measurement.voltage}}</td>
+              <td>{{measurement.current}}</td>
+              <td>{{measurement.power}}</td>
+              <td>{{measurement.reactivePower}}</td>
+              <td>{{measurement.cosPhi}}</td>
             </tr>
           </table>
         </div>

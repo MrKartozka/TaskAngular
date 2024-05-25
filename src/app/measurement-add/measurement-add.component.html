@@ -1,0 +1,8 @@
+<h2>Добавить измерение</h2>
+<form (ngSubmit)="onSubmit()">
+    <label>Источник:
+        <input [(ngModel)]="measurement.source" name="source" required>
+    </label>
+    <button type="submit">Добавить</button>
+</form>
+<button (click)="close()">Закрыть</button>
