@@ -1,14 +1,45 @@
-<h2>Редактировать измерение</h2>
-<form (ngSubmit)="onSubmit()">
-    <label>Дата:
-        <input [(ngModel)]="measurement.date" name="date" required>
-    </label>
-    <label>Время:
-        <input [(ngModel)]="measurement.time" name="time" required>
-    </label>
-    <label>Источник:
-        <input [(ngModel)]="measurement.source" name="source" required>
-    </label>
-    <button type="submit">Сохранить</button>
-</form>
-<button (click)="close()">Закрыть</button>
+<div class="modal-info">
+    <h1 class="modal-info__modal-edit">Редактировать измерение</h1>
+    <form (ngSubmit)="onSubmit()">
+        <label class="modal-info__modal-field">
+            Дата:
+            <input type="text" [(ngModel)]="measurement.date" name="date" required>
+        </label>
+        <label class="modal-info__modal-field">
+            Время:
+            <input type="text" [(ngModel)]="measurement.time" name="time" required>
+        </label>
+        <label class="modal-info__modal-field">
+            Источник:
+            <input type="text" [(ngModel)]="measurement.source" name="source" required>
+        </label>
+        <label class="modal-info__modal-field">
+            Фаза:
+            <input type="text" [(ngModel)]="measurement.phase" name="phase" disabled>
+        </label>
+        <label class="modal-info__modal-field">
+            U, kB:
+            <input type="text" [(ngModel)]="measurement.voltage" name="voltage" disabled>
+        </label>
+        <label class="modal-info__modal-field">
+            I, A:
+            <input type="text" [(ngModel)]="measurement.current" name="current" disabled>
+        </label>
+        <label class="modal-info__modal-field">
+            P, MBt:
+            <input type="text" [(ngModel)]="measurement.power" name="power" disabled>
+        </label>
+        <label class="modal-info__modal-field">
+            Q, Mвар:
+            <input type="text" [(ngModel)]="measurement.reactivePower" name="reactivePower" disabled>
+        </label>
+        <label class="modal-info__modal-field">
+            cos φ:
+            <input type="text" [(ngModel)]="measurement.cosPhi" name="cosPhi" disabled>
+        </label>
+        <div class="modal-info__dialog-actions">
+            <button class="modal-info__dialog-actions-btn undo-btn" type="button" (click)="onCancel()">Отменить</button>
+            <button class="modal-info__dialog-actions-btn save-btn" type="submit">Сохранить</button>
+        </div>
+    </form>
+</div>

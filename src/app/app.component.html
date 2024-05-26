@@ -32,7 +32,9 @@
 <main class="main">
   <div class="container">
     <div class="main__inner">
-      <div class="main_inner-choose-hardware" [ngStyle]="{'flex-basis': leftPanelWidth + 'px'}">
+      <div class="main_inner-choose-hardware" [ngClass]="{'disable-flex-basis': screenWidth <= 1500}"
+        [ngStyle]="{'flex-basis': leftPanelWidth + 'px'}">
+
         <div class="main__inner-stations">
           <div class="main__inner-stations-choose">
             <button class="main__inner-stations-substation-btn">
@@ -120,7 +122,7 @@
         </div>
       </div>
 
-      <!-- Resizer -->
+      <!---------------- RESIZER ---------------------->
       <div class="resizer" (mousedown)="onMouseDown($event)">
         <img src="../assets/img/middle.svg" alt="" class="resizer-img" id="resizerImg">
       </div>
@@ -130,7 +132,7 @@
       <div class="main__inner-measuring">
         <div class="main__inner-measuring-title">
           <img src="../assets/img/file.svg" alt="" class="main__inner-measuring-title-img">
-          <h2 class="main__inner-measuing-title-text">РТСН\НН-2</h2>
+          <h2 class="main__inner-measuring-title-text">РТСН\НН-2</h2>
         </div>
         <div class="main__inner-measuring-tools">
           <div class="main__inner-measuring-tools-functions">
@@ -140,7 +142,7 @@
             <button class="main__inner-measuring-tools-btn undo-btn">
               <img src="../assets/img/block.svg" alt="" class="tools-undo-img">Отменить проверку
             </button>
-            <button class="main__inner-measuring-tools-btn edit-btn" (click)="openEditModal(selectedMeasurement)">
+            <button class="main__inner-measuring-tools-btn edit-btn" (click)="openEditModal()">
               <img src="../assets/img/edit.svg" alt="" class="tools-edit-img">Редактировать
             </button>
             <button class="main__inner-measuring-tools-btn delete-btn" (click)="deleteMeasurements()">
@@ -175,7 +177,7 @@
         <div>
           <table class="main__inner-table-measurements">
             <tr>
-              <th><input type="checkbox"></th>
+              <th><input type="checkbox" (change)="toggleSelectAll($event)"></th>
               <th>Дата</th>
               <th>Время</th>
               <th>Источник</th>
@@ -193,7 +195,8 @@
                 </button>
               </td>
             </tr>
-            <tr *ngFor="let measurement of measurements">
+            <tr *ngFor="let measurement of measurements"
+              [class.selected]="selectedMeasurements.includes(measurement.id)">
               <td><input type="checkbox" (change)="toggleSelection(measurement.id)"></td>
               <td>{{measurement.date}}</td>
               <td>{{measurement.time}}</td>

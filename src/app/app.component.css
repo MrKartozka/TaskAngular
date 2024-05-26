@@ -2,20 +2,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     user-select: none;
 }
-
 
 /* ---------------------------- HEADER SECTION */
 
 .header {
     background-color: #005BAA;
+    padding: 0 10px;
 }
 
 .container {
     max-width: 1860px;
     margin: 0 auto;
+    height: 100%;
 }
 
 .header__inner {
@@ -40,6 +41,7 @@
     letter-spacing: 0.1em;
     color: white;
     margin-right: 65px;
+    font-size: 24px;
 }
 
 .header__inner-buttons {
@@ -93,9 +95,21 @@
     color: black;
 }
 
+.measuring-btn,
+.compact-btn {
+    border-radius: 5px 0 0 5px;
+}
+
+.service-btn,
+.week-btn {
+    border-radius: 0 5px 5px 0;
+}
+
+
 /*------------------ MAIN SECTION 1 */
 .main {
     flex: 1;
+    padding: 0 10px;
 }
 
 .main__inner {
@@ -127,7 +141,7 @@
     display: flex;
     gap: 8px;
     align-items: center;
-    padding: 10px 20px;
+    padding: 6px 20px;
     background-color: transparent;
     border: 1px solid #E0E0E0;
     font-size: 16px;
@@ -141,7 +155,8 @@
     justify-content: center;
     line-height: 20px;
     gap: 6px;
-    padding: 10px;
+    padding: 0 15px;
+    max-height: 38px;
     background-color: #005BAA;
     border: 1px solid #E0E0E0;
     border-radius: 5px;
@@ -249,10 +264,10 @@
 
 .resizer {
     width: 10px;
-    background-color: #ccc;
+    background-color: #F2F2F2;
     position: relative;
     margin: 0 30px;
-    height: 89dvh;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -276,16 +291,25 @@
     display: flex;
     gap: 10px;
     margin-bottom: 15px;
+    align-items: center;
+}
+
+.main__inner-measuring-title-text {
+    padding-left: 5px;
+    font-size: 22px;
 }
 
 .main__inner-measuring-tools {
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .main__inner-measuring-tools-functions {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -299,6 +323,9 @@
     border: 1px solid #005BAA;
     color: #005BAA;
     border-radius: 5px;
+    max-height: 32px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .main__inner-measuring-tools-view {
@@ -315,6 +342,10 @@
     padding: 2px;
     min-width: 45px;
     border: 1px solid #CED4DA;
+}
+
+.main__inner-measuring-tools-view-change-btn img {
+    margin-bottom: 3px;
 }
 
 .main__inner-measuring-tools-view-change-btn:hover {
@@ -376,7 +407,7 @@ th {
 }
 
 .main__inner-table-equipment th {
-    background-color: #E0E0E0;
+    background-color: #ebebeb;
     font-size: 18px;
     padding: 8px;
     font-weight: 400;
@@ -401,11 +432,8 @@ th {
 td,
 th {
     border: 1px solid #E0E0E0;
-    border-collapse: collapse;
-}
 
-.main__inner-table-measurements th {
-    border: 1px solid #b9b9b9;
+    border-collapse: collapse;
 }
 
 .main__inner-table-measurements td {
@@ -414,10 +442,13 @@ th {
 }
 
 .main__inner-table-measurements th {
-    background-color: #E0E0E0;
+    background-color: #ebebeb;
     font-size: 18px;
     padding: 8px;
     font-weight: 400;
+    border: 1px solid #E0E0E0;
+
+    font-weight: 500;
 }
 
 .main__inner-table-measurements tr:not(:nth-child(2)):hover td {
@@ -425,7 +456,7 @@ th {
 }
 
 .main__inner-table-button {
-    width: 20%;
+    /* width: 20%; */
     background-color: transparent;
     border: none;
     display: flex;
@@ -459,7 +490,7 @@ th {
     height: 0;
 }
 
-/* The slider */
+/*------------------------ SLIDER */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -498,11 +529,36 @@ input:checked+.slider:before {
     transform: translateX(16px);
 }
 
-/* Rounded sliders */
+/*--------------------- ROUNDED SLIDER ------------ */
 .slider.round {
     border-radius: 34px;
 }
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+.selected {
+    background-color: lightblue;
+}
+
+
+/* Вертикальное разделение */
+@media screen and (max-width: 1500px) {
+
+    .main__inner {
+        flex-direction: column;
+    }
+
+    .resizer {
+        display: none;
+    }
+
+    .main__inner-measuring {
+        margin-top: 50px;
+    }
+}
+
+.disable-flex-basis {
+    flex-basis: auto !important;
 }

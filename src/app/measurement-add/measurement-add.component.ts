@@ -1,35 +1,43 @@
 import { Component } from '@angular/core';
 import { DataService, Measurement } from '../data.service';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-measurement-add',
+  templateUrl: './measurement-add.component.html',
+  styleUrls: ['./measurement-add.component.css'],
   standalone: true,
   imports: [FormsModule],
-  templateUrl: './measurement-add.component.html',
-  styleUrl: './measurement-add.component.css',
 })
 export class MeasurementAddComponent {
-  measurement: Partial<Measurement> = {};
+  // Создаем объект measurement с начальными значениями
+  measurement: Measurement = {
+    id: 0,
+    date: new Date().toLocaleDateString(),
+    time: new Date().toLocaleTimeString(),
+    source: '',
+    phase: '',
+    voltage: null,
+    current: null,
+    power: null,
+    reactivePower: null,
+    cosPhi: null,
+  };
 
   constructor(
     private dataService: DataService,
     public activeModal: NgbActiveModal
   ) {}
 
-  onSubmit() {
-    const newMeasurement: Measurement = {
-      ...this.measurement,
-      id: 0,
-      date: new Date().toLocaleDateString(),
-      time: new Date().toLocaleTimeString(),
-    } as Measurement;
-    this.dataService.addMeasurement(newMeasurement);
+  // Метод, который вызывается при отправке формы
+  onSubmit(): void {
+    this.dataService.addMeasurement(this.measurement);
     this.activeModal.close();
   }
 
-  close() {
+  // Метод, который вызывается при нажатии на кнопку "Отменить"
+  onCancel(): void {
     this.activeModal.dismiss();
   }
 }
