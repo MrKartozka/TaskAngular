@@ -197,7 +197,8 @@
             </tr>
             <tr *ngFor="let measurement of measurements"
               [class.selected]="selectedMeasurements.includes(measurement.id)">
-              <td><input type="checkbox" (change)="toggleSelection(measurement.id)"></td>
+              <td><input type="checkbox" id="checkbox-{{measurement.id}}" (change)="toggleSelection(measurement.id)"
+                  [checked]="selectedMeasurements.includes(measurement.id)"></td>
               <td>{{measurement.date}}</td>
               <td>{{measurement.time}}</td>
               <td>{{measurement.source}}</td>

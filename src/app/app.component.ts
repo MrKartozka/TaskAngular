@@ -97,13 +97,27 @@ export class AppComponent {
   // Метод для открытия модального окна редактирования измерения
   openEditModal() {
     if (this.selectedMeasurements.length === 1) {
-      // Проверяем, что выбрано только одно измерение
       const measurement = this.measurements.find(
         (m) => m.id === this.selectedMeasurements[0]
       );
       if (measurement) {
         const modalRef = this.modalService.open(MeasurementEditComponent);
-        modalRef.componentInstance.measurementId = measurement.id; // Передаем ID измерения в модальное окно
+        modalRef.componentInstance.measurementId = measurement.id;
+        modalRef.result
+          .then(
+            () => {
+              // Закрытие модального окна (успешное редактирование)
+              this.resetSelection();
+            },
+            () => {
+              // Отклонение модального окна (закрытие без редактирования)
+              this.resetSelection();
+            }
+          )
+          .finally(() => {
+            // Сбрасываем выделение в любом случае, когда модальное окно закрывается
+            this.resetSelection();
+          });
       }
     }
   }
@@ -147,5 +161,20 @@ export class AppComponent {
   // Метод для проверки, можно ли редактировать измерение
   canEdit(): boolean {
     return this.selectedMeasurements.length === 1;
+  }
+
+  // Метод для сброса выделения
+  resetSelection(): void {
+    this.selectedMeasurements = [];
+    this.selectedMeasurement = null;
+    // Обновляем DOM принудительно для снятия галочек
+    this.measurements.forEach((measurement) => {
+      const checkbox = document.getElementById(
+        `checkbox-${measurement.id}`
+      ) as HTMLInputElement;
+      if (checkbox) {
+        checkbox.checked = false;
+      }
+    });
   }
 }
