@@ -26,14 +26,14 @@ export class DataService {
       date: '30.07.2022',
       time: '10.15:23',
       source: 'Оператор',
-      phase: '-',
+      phase: '—',
     },
     {
       id: 2,
       date: '30.07.2022',
       time: '10.08:44',
       source: 'Оператор',
-      phase: '-',
+      phase: '—',
     },
     {
       id: 3,

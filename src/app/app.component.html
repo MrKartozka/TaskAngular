@@ -167,9 +167,9 @@
           <p class="main__inner-measuring-info-text"><span class="measuring-info-text--red">Нет</span> проверенных
             замеров</p>
           <div class="main__inner-measuring-info-group">
-            <label class="switch">
+            <label class="switch-date">
               <input type="checkbox">
-              <span class="slider round"></span>
+              <span class="slider-date round"></span>
             </label>
             <p class="main__inner-measuring-info-group-text">Группировать по дате</p>
           </div>
@@ -177,7 +177,8 @@
         <div>
           <table class="main__inner-table-measurements">
             <tr>
-              <th><input type="checkbox" (change)="toggleSelectAll($event)"></th>
+              <th><input type="checkbox" class="main__inner-table-measurements-checkbox"
+                  (change)="toggleSelectAll($event)"></th>
               <th>Дата</th>
               <th>Время</th>
               <th>Источник</th>
@@ -197,7 +198,8 @@
             </tr>
             <tr *ngFor="let measurement of measurements"
               [class.selected]="selectedMeasurements.includes(measurement.id)">
-              <td><input type="checkbox" id="checkbox-{{measurement.id}}" (change)="toggleSelection(measurement.id)"
+              <td><input type="checkbox" class="main__inner-table-measurements-checkbox"
+                  id="checkbox-{{measurement.id}}" (change)="toggleSelection(measurement.id)"
                   [checked]="selectedMeasurements.includes(measurement.id)"></td>
               <td>{{measurement.date}}</td>
               <td>{{measurement.time}}</td>
