@@ -178,8 +178,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    line-height: 20px;
-    gap: 6px;
+    gap: 8px;
     padding: 9px 12px 9px 12px;
     max-height: 38px;
     background-color: #005BAA;
@@ -197,7 +196,6 @@
     border: none;
     background-color: transparent;
     color: #005BAA;
-    min-width: 100px;
     height: 42px;
     border-radius: 4px 4px 0 0;
     font-size: 16px;
@@ -335,7 +333,7 @@
 .main__inner-measuring-title {
     display: flex;
     gap: 15px;
-    margin-bottom: 16px;
+    margin-bottom: 19px;
     align-items: center;
 }
 
@@ -387,7 +385,6 @@
 .main__inner-measuring-tools-view-change-btn {
     background-color: transparent;
     padding: 2px;
-    min-width: 45px;
 }
 
 .main__inner-measuring-tools-view-change-btn img {
@@ -488,14 +485,37 @@ th {
     border-collapse: collapse;
 }
 
-.main__inner-table-measurements td {
-    min-width: 10%;
-    padding: 8px;
+.main__inner-table-measurements td,
+.main__inner-table-measurements th {
+    height: 37px;
+    line-height: 37px;
+    padding: 0;
+}
+
+.main__inner-table-equipment th {
+    height: 41px;
+    line-height: 41px;
+    padding: 0;
+}
+
+.main__inner-table-equipment td {
+    height: 39px;
+    line-height: 39px;
+    padding: 0;
+}
+
+.main__inner-table-equipment td,
+.main__inner-table-equipment th {
+    padding-left: 10px;
+}
+
+.main__inner-table-measurements td:not(.main__inner-td),
+.main__inner-table-measurements th:not(.main__inner-th) {
+    padding-left: 8px;
 }
 
 .main__inner-table-measurements th {
     background-color: #F2F2F2;
-    padding: 8px;
     font-weight: 400;
     border: 1px solid #E0E0E0;
     font-weight: 500;
@@ -513,7 +533,7 @@ th {
     align-items: center;
     gap: 12px;
     color: #005BAA;
-    margin-left: 8px;
+    margin-left: 2px;
 }
 
 .main__inner-table-measurements-checkbox {
@@ -529,7 +549,8 @@ th {
 
 .footer {
     background-color: #005BAA;
-    padding: 10px;
+    height: 37px;
+    padding: 5px;
 }
 
 .footer p {
@@ -654,6 +675,8 @@ input[type="checkbox"] {
     border-radius: 4px;
     outline: none;
     cursor: pointer;
+    background-color: white;
+    margin: 8px;
 }
 
 /* ------------------------Стиль для состояния */
@@ -711,6 +734,48 @@ input[type="checkbox"]:checked::before {
 
 .selected {
     background-color: lightblue;
+}
+
+/* ------------Размеры ячеек */
+
+.main__inner-table-measurements th:nth-child(1) {
+    width: 36px;
+}
+
+.main__inner-table-measurements th:nth-child(2) {
+    width: 140px;
+}
+
+.main__inner-table-measurements th:nth-child(3) {
+    width: 87px;
+}
+
+.main__inner-table-measurements th:nth-child(4) {
+    width: 120px;
+}
+
+.main__inner-table-measurements th:nth-child(5) {
+    width: 60px;
+}
+
+.main__inner-table-measurements th:nth-child(6) {
+    width: 100px;
+}
+
+.main__inner-table-measurements th:nth-child(7) {
+    width: 100px;
+}
+
+.main__inner-table-measurements th:nth-child(8) {
+    width: 68px;
+}
+
+.main__inner-table-measurements th:nth-child(9) {
+    width: 81px;
+}
+
+.main__inner-table-measurements th:nth-child(10) {
+    width: 100px;
 }
 
 

@@ -83,8 +83,8 @@
         <div class="main__inner-table">
           <table class="main__inner-table-equipment">
             <tr>
-              <th>Наименование</th>
-              <th>U ном.</th>
+              <th class="main__inner-table-th">Наименование</th>
+              <th class="main__inner-table-th">U ном.</th>
             </tr>
             <tr>
               <td>
@@ -177,7 +177,7 @@
         <div>
           <table class="main__inner-table-measurements">
             <tr>
-              <th><input type="checkbox" class="main__inner-table-measurements-checkbox"
+              <th class="main__inner-th"><input type="checkbox" class="main__inner-table-measurements-checkbox"
                   (change)="toggleSelectAll($event)"></th>
               <th>Дата</th>
               <th>Время</th>
@@ -198,7 +198,7 @@
             </tr>
             <tr *ngFor="let measurement of measurements"
               [class.selected]="selectedMeasurements.includes(measurement.id)">
-              <td><input type="checkbox" class="main__inner-table-measurements-checkbox"
+              <td class="main__inner-td"><input type="checkbox" class="main__inner-table-measurements-checkbox"
                   id="checkbox-{{measurement.id}}" (change)="toggleSelection(measurement.id)"
                   [checked]="selectedMeasurements.includes(measurement.id)"></td>
               <td>{{measurement.date}}</td>
